@@ -1,18 +1,35 @@
 # Command supercharges you with AI
 
-Use Command to supercharge your productivity and workflow with personal, fast, and quality AI. Turn your Terminal into a configurable, interactive, and unobtrusive personal AI app. Power of 15 LLMs and 7 providers at your finger tips. Pair with workflows in Markdown, VS Code, Obsidian, and GitHub. Get productive fast with three simple commands.
+Use Command to supercharge your productivity and workflow with personal, fast, and quality AI. Turn your Terminal into a configurable, interactive, and unobtrusive personal AI app. **Power of 15+ LLMs and 7 providers at your finger tips.** Pair with workflows in Markdown, VS Code, Obsidian, and GitHub. Get productive fast with three simple commands.
 
-[![](https://raw.githubusercontent.com/command/command/main/images/command-youtube.png)](https://www.youtube.com/watch?v=rnKpeChON3g)
+[![Watch Command in Action](https://raw.githubusercontent.com/command/command/main/images/command-youtube.png)](https://www.youtube.com/watch?v=rnKpeChON3g)
 
-**Command Is All You Need:** So, the LLM science fans will get the pun in our tagline. It is a play on the famous paper that introduced the world to Transformer model architecture - Attention is all you need. With Command a simple command via your favorite terminal or shell is all you need to bend an large or small language model to your wishes. Command provides a rich UI right there within your command prompt. No browser tabs to open, no apps to install, no context switching... just pure, simple, fast workflow. Try it with a simple command like `ask "create a table of planets"` and see your Terminal come to life just like a chat UI with fast streaming responses, markdown formatted tables, and even code blocks with color highlights if your prompt requires code in response! Command has released 14 commands to help customize your personal AI workflow.
+## Why Command?
 
-**Top Models and Providers:** You can switch private models or hosted frontier LLMs with ease. Command comes with configurable support for more than 15 leading models (GPT 4o, Sonnet 3.5, Gemini 1.5 Pro, Mistral NeMo, Sonar Llama 3.1...) from 7 providers (Ollama, Anthropic, OpenAI, Groq, Google, Bedrock, and Perplexity).
+**Command Is All You Need:** A play on the famous "Attention is all you need" paper that introduced Transformers. With Command, a simple terminal command is all you need to harness the power of frontier and local LLMs. No browser tabs, no apps, no context switching—just pure, fast workflow. Try `ask "create a table of planets"` and watch your Terminal come alive with streaming responses, markdown-formatted tables, and syntax-highlighted code blocks!
 
-**Markdown Workflows:** Command works with markdown content (text files with simple formatting commands). So you can use it with many popular tools like VS Code and Obsidian to quickly and seamlessly design a custom workflow that enhances your craft.
+**Latest Claude Models Built-in:** Command now includes **Claude 4.5 Sonnet, Claude 4.5 Haiku, and Claude 4.1 Opus**—the newest, most capable models from Anthropic. Easy-to-use aliases like `sonnet4-5`, `haiku4-5`, and `opus4-1` let you switch models instantly. Model configurations are intelligently optimized: use Haiku 4.5 for fast, simple tasks (40% cost savings), Sonnet 4.5 for complex reasoning and code, and Opus 4.1 for deep creative writing and validation.
 
-**Do More With Less:** Command is very simple to use out of the box as you learn its handful of powerful commands. As you get comfortable you can customize Command commands simply by changing one configuration file and align Command to suit your workflow. Everything in Command has sensible defaults to get started quickly. 
+**Effortless Setup:** New `.env.local` support makes API key configuration a breeze. Just copy `.env.local.example`, add your keys, and go. No shell configuration needed. Command auto-loads your keys from the current directory or home directory. Only configure the providers you actually use.
 
-**Make It Your Own:** When you are ready, everything is configurable and extensible including commands, models, providers, prompts, model parameters, folders, and document types. Another magical thing happens when the interface to your generative AI is a humble command prompt. You will experience a sense of being in control. In control of your workflow, your privacy, your intents, and your artifacts. You are completely in control of your personal AI workflow with Command.
+**Top Models and Providers:** Switch between private or hosted frontier LLMs with ease. Command supports **15+ leading models** including:
+- **Claude**: Sonnet 4.5, Haiku 4.5, Opus 4.1, Sonnet 3.5, Opus 3, Haiku 3
+- **OpenAI**: GPT-4o, GPT-4o Mini, DALL-E 3
+- **Google**: Gemini 1.5 Pro, Gemini 1.5 Flash
+- **Local**: Llama 3.1, Mistral NeMo, Gemma 2, Qwen 2 via Ollama
+- **Groq, Perplexity, Bedrock** and more
+
+![Seamless Workflow Integration](https://raw.githubusercontent.com/command/command/main/images/Seamles%20Workflow.png)
+
+**Intent-Driven Workflow:** Command transforms your intents—tasks, goals, questions—into actionable results. Save your intents as simple markdown outlines, recall them when needed, run models on them, and save results based on your workflow.
+
+![Actionable Intents](https://raw.githubusercontent.com/command/command/main/images/Actionable%20Intents.png)
+
+**Markdown Workflows:** Command works seamlessly with markdown content, integrating perfectly with VS Code, Obsidian, and other markdown tools. Design custom workflows that enhance your craft without leaving your favorite environment.
+
+**Do More With Less:** Simple to use out of the box with sensible defaults. As you grow comfortable, customize everything via a single `command.yml` configuration file. No complex setup, no steep learning curve.
+
+**Make It Your Own:** Everything is configurable and extensible—commands, models, providers, prompts, parameters, folders, and document types. Experience true control over your AI workflow, your privacy, your intents, and your artifacts. Your terminal, your rules.
 
 ## Quick Start
 
@@ -27,27 +44,40 @@ ask "How old is the oldest pyramid?" # start prompting the model
 
 ### Models Setup
 
-You have two options to configure your API keys:
+**New in Command:** Effortless API key management with `.env.local` support!
 
-#### Option 1: Using .env.local file (Recommended)
+#### Option 1: Using .env.local file (Recommended - NEW!)
 
-Create a `.env.local` file in your project directory (or copy from `.env.local.example`):
+The easiest way to get started. Create a `.env.local` file in your project directory:
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-Then edit `.env.local` and add your API keys:
+Then edit `.env.local` and add your API keys (only the ones you need):
 
 ```bash
+# Anthropic (Claude models - includes new Sonnet 4.5, Haiku 4.5, Opus 4.1)
 ANTHROPIC_API_KEY=your_key_here
+
+# OpenAI (GPT-4o, GPT-4o Mini, DALL-E 3)
 OPENAI_API_KEY=your_key_here
+
+# Groq (Ultra-fast inference)
 GROQ_API_KEY=your_key_here
+
+# Google Gemini (1.5 Pro, Flash)
 GEMINI_API_KEY=your_key_here
+
+# Perplexity (Online search models)
 PERPLEXITY_KEY=your_key_here
 ```
 
-The `.env.local` file will be automatically loaded by Command. You only need to configure the providers you plan to use.
+**Benefits:**
+- Auto-loads from current directory or home directory
+- No shell configuration needed
+- Easy to share across projects
+- Only configure what you use
 
 #### Option 2: Using environment variables
 
@@ -66,15 +96,17 @@ Then reload your shell:
 source ~/.zshrc  # or source ~/.bashrc
 ```
 
-If you do not want to use any of the model then all you need to do is remove the corresponding entries from `command.yml` in the `model-mapping` and the `provider-model-mapping` sections. Also ensure that the other model configs only refer to available models.
+#### Local Models (No API Keys Required!)
 
-For local models [install Ollama](https://ollama.com/) and download the latest [models](https://ollama.com/library) you want to run.
+For local, private models, [install Ollama](https://ollama.com/) and download the latest [models](https://ollama.com/library) you want to run. Popular choices: Llama 3.1, Mistral NeMo, Gemma 2, Qwen 2.
 
-Now you are ready to test all models and providers.
+#### Test Your Setup
+
+Verify everything works across all configured models:
 
 ```bash
-command test ask
-command test vision
+command test ask      # Test text generation models
+command test vision   # Test vision-capable models
 ```
 
 ### Python Environment Setup (optional)
@@ -133,17 +165,21 @@ Now you are ready to install Command.
 
 ## Command Expands Your Content
 
-Using Command with few simple commands in your Terminal you can create a simple yet powerful personal AI content manager with your Markdown tool of choice like Obsidian or VS Code. For example, you can write partial blogs posts, write your seed ideas, start with a list of intents and prompts, or capture partial notes from a lecture where you were slightly distracted. 
+Transform partial ideas into polished content with Command's powerful `refer` workflow. Write partial blog posts, seed ideas, intent lists, or incomplete notes—then use Command to expand them into complete, well-researched content.
 
-Then you can use `refer` command in conjunction with custom `refer-section` configs within `command.yml` to expand this partial, incomplete, or seed content into complete posts, notes, articles, prompt templates, and even well-researched papers. You can experiment with choice of models and providers, tune model settings in the config by document type, define custom folders for your content, and specify document specific system prompts to get exactly the outcome you desire based on the type of the document. You just have to remember one simple command `refer` and you are all set.
+![Personal AI Analysis](https://raw.githubusercontent.com/command/command/main/images/Analyze%20Personal%20AI.png)
 
-As a quick example, check out the `Posts` folder with sample partially written post on startup growth strategies. Now view the related config section within `command.yml` for expanding posts.
+The `refer` command works with custom `refer-section` configs in `command.yml` to transform partial content into complete posts, notes, articles, or research papers. Experiment with models, tune settings by document type, define custom folders, and specify document-specific system prompts.
+
+### Example: Expanding Blog Posts
+
+Check out the `Posts` folder with a sample partially written post on startup growth strategies. Here's the related config section (now using **Claude Opus 4.1** for creative writing):
 
 ```yaml
 refer-post-to-update:
   lookup-folder: Posts
   max-tokens: 4000
-  model: sonnet
+  model: opus4-1          # Optimized: Opus 4.1 excels at creative writing
   provider: claude
   save: true
   save-folder: Posts
@@ -152,9 +188,40 @@ refer-post-to-update:
   temperature: 0.5
 ```
 
-Please note that for brevity we are not listing the complete system prompt here. You can obviously change it to suit your workflow. For now, just run `refer post-to-update "startup-growth-hacking"` command within the working folder where you initialized Command. Soon the model response starts streaming into your terminal. The expanded post is saved in the `Posts` folder with `updated` prefix so you can compare with the original.
+Run the command and watch as the model streams its response:
 
-To create a new document type like research papers, class notes, cooking recipes, or whatever, all you need to do is copy and customize one of the `refer-post-to-update` or `refer-intents-to-expand` sections into something like your custom `refer-notes-to-summarize` section. Then you can run a custom command on your new document type like `refer notes-to-summarize "your-notes-file"` and achieve the same results.
+```bash
+refer post-to-update "startup-growth-hacking"
+```
+
+The expanded post saves to the `Posts` folder with an `updated` prefix, preserving your original.
+
+### Create Custom Document Types
+
+Want to process research papers, class notes, or cooking recipes? Just copy and customize a `refer-*` section:
+
+```yaml
+refer-notes-to-summarize:
+  lookup-folder: Notes
+  max-tokens: 4000
+  model: haiku4-5      # Haiku 4.5 is fast and cost-effective for summaries
+  provider: claude
+  save: true
+  save-folder: Summaries
+  system: Summarize the key points from these notes...
+  temperature: 0.3
+```
+
+Then run your custom command:
+
+```bash
+refer notes-to-summarize "lecture-05-quantum-physics"
+```
+
+**Model Selection Best Practices:**
+- Use **Haiku 4.5** for simple extraction and templates (fast, 40% cheaper)
+- Use **Sonnet 4.5** for complex analysis and code generation
+- Use **Opus 4.1** for creative writing and deep research synthesis
 
 ## Combining Command Commands
 
@@ -171,99 +238,213 @@ This workflow can get really useful very fast. As each template has linked embed
 
 ## Test and Evaluate Models and Providers
 
-Command comes with configurable support for more than 15 leading models from five providers (Ollama, Anthropic, OpenAI, Groq, Google). The `command test` command can be used to run each of the command commands over all the provider and model combinations and respond with a summary of model test and evaluation results. Use this to quickly compare models and providers as well as when you add or remove a new model or provider in the config.
+Command makes it effortless to compare **15+ leading models** from 7 providers (Ollama, Anthropic, OpenAI, Groq, Google, Bedrock, Perplexity). The `command test` command runs your prompts across all configured provider-model combinations and generates a comprehensive evaluation summary.
 
-This command is super useful when comparing model response time (latency), response quality (does it follow the system and prompt instructions), response accuracy, and token length (cost) for the same prompt. You can configure the test prompts within `command.yml` in the `test` section.
+**What You Can Compare:**
+- **Response Time (Latency):** Which models answer fastest?
+- **Response Quality:** Does it follow instructions precisely?
+- **Response Accuracy:** Are the facts correct?
+- **Token Length (Cost):** What's the efficiency-to-cost ratio?
 
-![](https://raw.githubusercontent.com/command/command/main/images/test-summary.webp)
+Configure your test prompts in the `test` section of `command.yml`, then run:
 
-Here is an example of running `command test vision` command and resulting test summary. I this default prompt and image we are sharing image of around 150-160 people standing in close proximity in a circle and asking the model to count the number of people. The right number is between 150-160. This can be used to calculate the relative accuracy of each model based on the response. How closely the response follows the system prompt and the user prompts is  indicative of quality of response.
+```bash
+command test ask      # Test text generation across all models
+command test vision   # Test vision-capable models
+```
 
-You can also notice the response times seem proportional to model size. For Claude, Opus > Sonnet > Haiku. For Gemini, Pro > Flash. For OpenAI, GPT-4o > GPT-4-mini.
+![Test Summary Results](https://raw.githubusercontent.com/command/command/main/images/test-summary.webp)
 
-You can similarly run `command test ask` command to test across all models and providers. In this run you may find groq is among the fastest providers when it comes to response time.
+### Vision Model Testing Example
 
-Of course, you may need multiple test runs to get better intuition of response times as there are multiple factors which effect latency other than model size or architecture, like network latency, which may change across multiple test runs.
+The default vision test uses an image with 150-160 people standing in a circle and asks models to count them. The accuracy of the count reveals each model's vision capabilities. You'll notice:
+
+- **Response times correlate with model size:** For Claude, Opus 4.1 > Sonnet 4.5 > Haiku 4.5; For Gemini, Pro > Flash; For OpenAI, GPT-4o > GPT-4o Mini
+- **Groq typically delivers the fastest response times** for text generation
+- **Quality varies:** How closely models follow system and user prompts indicates response quality
+
+### Performance Insights
+
+Run multiple tests to understand model performance patterns. Network latency, server load, and other factors can affect individual runs, but trends emerge over time. Use the `command trends` command (covered below) to visualize performance patterns across days or weeks.
 
 ## Visualize Trends
 
-Each `command test` command run saves the test summary data in `Metrics` folder by timestamp and provider-model. Over time you can visualize trends of latency and token count metrics to see if models are performing consistently. Run `command trends` command to view trends for 7 days (default).
+Every `command test` run saves detailed metrics (latency, token counts) to the `Metrics` folder with timestamps and provider-model tags. Over time, these metrics reveal performance patterns and help you make informed decisions about which models to use.
 
-![](https://raw.githubusercontent.com/command/command/main/images/trends.webp)
+```bash
+command trends           # View trends for last 7 days (default)
+command trends --days 30 # View trends for last 30 days
+```
 
-The visualization uses sparklines to show data trends over time. Use this to decide when/if to switch models based on performance trends.
+![Performance Trends Visualization](https://raw.githubusercontent.com/command/command/main/images/trends.webp)
 
-## Run multiple models side by side
+**What You'll See:**
+- **Sparkline visualizations** showing performance trends over time
+- **Latency patterns:** Are models getting faster or slower?
+- **Token count trends:** Is efficiency improving?
+- **Consistency metrics:** Which models deliver reliable performance?
 
-Want to compare multiple models side by side? All you need to do is open multiple shells or Terminal instances. Now in each of these, one by one, change the model, run same `ask "prompt"` and compare the results side by side. Simple!
+Use these insights to:
+- Decide when to switch models based on degrading performance
+- Identify the most reliable models for your workload
+- Plan cost optimizations by tracking token usage patterns
+- Validate that new model versions (like Sonnet 4.5 or Opus 4.1) deliver expected improvements
 
-![](https://raw.githubusercontent.com/command/assets/main/images/compare-models-1.png)
+## Run Multiple Models Side by Side
 
-![](https://raw.githubusercontent.com/command/assets/main/images/compare-models-2.png)
+Compare models in real-time by running them in parallel terminal windows. Open multiple shells, configure each to use a different model, and run the same prompt to see how responses differ.
 
-As Command commands use the `command.yml` config in the current folder every time they run, you can create more complex parallel running, multi-model and cross-provider workflows by simply copying the config file into multiple folders and running commands there. This way you can be running some long running tasks on a local model in one folder and terminal. While you are doing your day to day workflow in another. And so on.
+**Quick Example:**
+
+Terminal 1:
+```bash
+command config ask model sonnet4-5
+ask "Explain quantum entanglement"
+```
+
+Terminal 2:
+```bash
+command config ask model opus4-1
+ask "Explain quantum entanglement"
+```
+
+Terminal 3:
+```bash
+command config ask model haiku4-5
+ask "Explain quantum entanglement"
+```
+
+![Compare Models Side by Side - Example 1](https://raw.githubusercontent.com/command/assets/main/images/compare-models-1.png)
+
+![Compare Models Side by Side - Example 2](https://raw.githubusercontent.com/command/assets/main/images/compare-models-2.png)
+
+### Advanced Multi-Model Workflows
+
+Command reads `command.yml` from the current directory on every run, enabling sophisticated parallel workflows:
+
+1. **Copy config to multiple folders** for different use cases
+2. **Run long-running tasks** on local models in one terminal
+3. **Handle daily workflows** with frontier models in another
+4. **Test experimental prompts** in a third environment
+
+Example folder structure:
+```
+~/projects/research/          # Opus 4.1 for deep analysis
+~/projects/quick-tasks/       # Haiku 4.5 for speed
+~/projects/code-generation/   # Sonnet 4.5 for coding
+```
+
+Each folder can have its own `command.yml` with optimized settings for that workflow.
 
 
-## Workflow freedom
+## Workflow Freedom
 
-There is no behavioral marketing or growth hacking a business can do within your command prompt. You guide your workflow the way you feel fit. Run the fastest model provider (Groq with Llama 3.1), or the most capable model right now (Sonnet 3.5 or GPT-4o), or the latest small model on your laptop (Mistral Nemo), or the model with the largest context (Gemini 1.5 Flash), you decide. Run with fast wifi or no-wifi (using local models), no constraints. Instantly search, research, Q&A to learn something or generate a set of artifacts to save for later. Switching to any of these workflows is a couple of changes in a config file or a few easy to remember commands on your terminal.
+Your terminal, your rules. No behavioral marketing, no growth hacking, no forced workflows. Command puts you in complete control of your AI experience.
 
-You can also configure custom model names to actual model version mapping for simplifying model switching commands. With the following mapping the commands to switch models are `command config ask model llama` or `command config intents model haiku` and so on.
+**Choose Your Path:**
+- **Speed:** Groq with Llama 3.1 for ultra-fast responses
+- **Capability:** Sonnet 4.5, Opus 4.1, or GPT-4o for frontier performance
+- **Privacy:** Mistral NeMo, Llama 3.1, or Gemma 2 running locally via Ollama
+- **Context:** Gemini 1.5 Pro/Flash for massive context windows (up to 2M tokens)
+- **Cost:** Haiku 4.5 for 40% savings on simple tasks
+
+Switch between any workflow with a simple config change or terminal command. Work online with fast WiFi or completely offline with local models. No constraints.
+
+### Easy Model Switching
+
+Command uses friendly aliases that map to full model names. Switch models instantly:
+
+```bash
+command config ask model sonnet4-5    # Latest Claude Sonnet
+command config ask model haiku4-5     # Fast, cost-effective
+command config ask model opus4-1      # Deep creative analysis
+command config intents model llama    # Local privacy
+```
+
+**Current Model Mappings:**
 
 ```yaml
 model-mapping:
-  # Claude models
+  # Claude models (including latest 4.x series)
+  sonnet4-5: claude-sonnet-4-5
+  haiku4-5: claude-haiku-4-5
+  opus4-1: claude-opus-4-1
   sonnet: claude-3-5-sonnet-20240620
   opus: claude-3-opus-20240229
   haiku: claude-3-haiku-20240307
-  
-  # Ollama models
+
+  # Ollama local models
   llama: llama3.1
   gemma: gemma2
   mistral: mistral-nemo
-  
-  # Groq models
-  groq-mixtral: mixtral-8x7b-32768
-  groq-llama: llama2-70b-4096
+
+  # Groq (ultra-fast inference)
+  mixtral: mixtral-8x7b-32768
 
   # OpenAI models
   gpt4mini: gpt-4o-mini
   gpt4o: gpt-4o
 
-  # Gemini models
+  # Gemini models (massive context)
   gemini-pro: gemini-1.5-pro
   gemini-flash: gemini-1.5-flash
 ```
 
+Customize these mappings in your `command.yml` to match your preferences.
 
 
-## Privacy controls 
 
-You decide which model and provider you trust, or even choose to run an LLM locally on your laptop. You are in control of how private your data and preferences remain. Command supports state of the art models from Anthropic, OpenAI, Google, and Meta. You can choose a hosted provider or Ollama as a local model provider on your laptop. Switch between models and providers using a simple command like `command config ask model llama` to switch from the current model.
+## Privacy Controls
 
-You can also load custom model config sets mapped to each command. Configure these in `command.yml` file. Here is an example of constraining how `command ask` and `command intents` commands behave differently using local and hosted model providers.
+You control your data. Period. Choose models and providers you trust, or run LLMs entirely locally on your laptop with zero external API calls.
+
+**Your Privacy Options:**
+
+1. **Fully Local (Zero Cloud):** Use Ollama with Llama 3.1, Mistral NeMo, Gemma 2, or Qwen 2. Your data never leaves your machine.
+
+2. **Trusted Cloud Providers:** Select from Anthropic (Claude), OpenAI, Google (Gemini), Groq, Perplexity, or AWS Bedrock based on your trust and compliance requirements.
+
+3. **Hybrid Workflows:** Use local models for sensitive data, cloud models for general tasks.
+
+Switch instantly:
+```bash
+command config ask model llama      # Switch to local Llama 3.1
+command config ask provider ollama  # Ensure local provider
+```
+
+### Per-Command Privacy Configuration
+
+Configure different privacy levels for different commands. Example: keep quick Q&A local, use frontier models for content generation:
 
 ```yaml
 ask:
-  provider: ollama
-  model: mistral
+  provider: ollama          # Local, private
+  model: mistral           # Mistral NeMo on your laptop
   max-tokens: 300
-  save: false
-  system: Be crisp in your response. Only respond to the prompt 
-	using valid markdown syntax. Do not explain your response.
+  save: false              # Don't save casual Q&A
   temperature: 0.3
 
 intents:
+  provider: claude         # Cloud-based for advanced content
+  model: sonnet4-5         # Latest Sonnet for quality
+  max-tokens: 4000
+  save: true              # Save generated content
+  save-folder: Embeds
+  temperature: 0.3
+
+validate:
   provider: claude
-  model: sonnet
-  max-tokens: 1000
-  save: true
-  folder: Embeds
-  system: Only respond to the prompt using valid markdown syntax.
-    When responding with markdown headings start at level 2. 
-    Do not explain your response.
+  model: opus4-1          # Opus 4.1 for deep validation
+  max-tokens: 4000
   temperature: 0.0
 ```
+
+**Key Privacy Features:**
+- API keys stored in `.env.local` (never committed to git)
+- All data saved locally in your chosen folders
+- No telemetry, no analytics, no tracking
+- Full control over what gets saved and where
+- Audit trail via `command audit` shows exactly what you've run
 
 
 ## Audit Trail

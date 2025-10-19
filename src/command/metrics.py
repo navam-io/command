@@ -49,7 +49,11 @@ def generate_yaml_data(
 
 
 def save_to_yaml(data):
-    filename = f"Metrics/test_summary_{datetime.now().strftime('%Y%m%d')}.yml"
+    # Ensure Metrics directory exists
+    metrics_dir = "Metrics"
+    os.makedirs(metrics_dir, exist_ok=True)
+
+    filename = f"{metrics_dir}/test_summary_{datetime.now().strftime('%Y%m%d')}.yml"
 
     if os.path.exists(filename):
         with open(filename, "r") as file:

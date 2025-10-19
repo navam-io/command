@@ -11,6 +11,7 @@ from typing import Any, Dict, Generator, List, Union
 import boto3
 
 from command.provider import Provider
+from command import env_loader  # Load .env.local automatically
 
 
 class Bedrock(Provider):

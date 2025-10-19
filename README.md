@@ -26,14 +26,44 @@ ask "How old is the oldest pyramid?" # start prompting the model
 ```
 
 ### Models Setup
-You will need to setup model-provider keys. Edit your environment config `~/.zshrc` like so.
+
+You have two options to configure your API keys:
+
+#### Option 1: Using .env.local file (Recommended)
+
+Create a `.env.local` file in your project directory (or copy from `.env.local.example`):
 
 ```bash
-export ANTHROPIC_API_KEY= # https://docs.anthropic.com/en/api/getting-started
-export OPENAI_API_KEY= # https://openai.com/index/openai-api/
-export GROQ_API_KEY= # https://console.groq.com/keys
-export GEMINI_API_KEY= # https://ai.google.dev/gemini-api
-export PERPLEXITY_KEY= # https://www.perplexity.ai/settings/api
+cp .env.local.example .env.local
+```
+
+Then edit `.env.local` and add your API keys:
+
+```bash
+ANTHROPIC_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
+GROQ_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
+PERPLEXITY_KEY=your_key_here
+```
+
+The `.env.local` file will be automatically loaded by Command. You only need to configure the providers you plan to use.
+
+#### Option 2: Using environment variables
+
+Alternatively, you can set environment variables in your `~/.zshrc` or `~/.bashrc`:
+
+```bash
+export ANTHROPIC_API_KEY=your_key_here  # https://docs.anthropic.com/en/api/getting-started
+export OPENAI_API_KEY=your_key_here     # https://openai.com/index/openai-api/
+export GROQ_API_KEY=your_key_here       # https://console.groq.com/keys
+export GEMINI_API_KEY=your_key_here     # https://ai.google.dev/gemini-api
+export PERPLEXITY_KEY=your_key_here     # https://www.perplexity.ai/settings/api
+```
+
+Then reload your shell:
+```bash
+source ~/.zshrc  # or source ~/.bashrc
 ```
 
 If you do not want to use any of the model then all you need to do is remove the corresponding entries from `command.yml` in the `model-mapping` and the `provider-model-mapping` sections. Also ensure that the other model configs only refer to available models.

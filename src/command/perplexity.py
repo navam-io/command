@@ -5,13 +5,13 @@
 # This code is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import json
-import os
 from typing import Any, Dict, Generator
 
 import requests
 
 import command.configure as configure
 from command.provider import Provider
+from command.env_loader import get_api_key
 
 
 class Perplexity(Provider):
@@ -19,8 +19,13 @@ class Perplexity(Provider):
         super().__init__()
         self.url = "https://api.perplexity.ai/chat/completions"
         self.full_config = configure.load_config()
+        api_key = get_api_key("perplexity", "PERPLEXITY_KEY")
+        if not api_key:
+            raise ValueError(
+                "PERPLEXITY_KEY not found. Please set it in .env.local file or as an environment variable."
+            )
         self.headers = {
-            "Authorization": f"Bearer {os.environ.get('PERPLEXITY_KEY')}",
+            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         }
 

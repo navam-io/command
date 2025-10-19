@@ -4,21 +4,23 @@
 # You may use this code under the terms of the Apache-2.0 license.
 # This code is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-import os
 from typing import Any, Dict, Generator, List
 
 import google.generativeai as genai
 
 import command.configure as configure
 from command.provider import Provider
+from command.env_loader import get_api_key
 
 
 class Gemini(Provider):
     def __init__(self):
         super().__init__()
-        api_key = os.environ.get("GEMINI_API_KEY")
+        api_key = get_api_key("gemini", "GEMINI_API_KEY")
         if not api_key:
-            raise ValueError("GEMINI_API_KEY environment variable is not set")
+            raise ValueError(
+                "GEMINI_API_KEY not found. Please set it in .env.local file or as an environment variable."
+            )
         genai.configure(api_key=api_key)
         self.full_config = configure.load_config()
 

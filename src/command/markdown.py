@@ -13,7 +13,7 @@ from rich.console import Console
 from rich.prompt import Prompt
 from rich.table import Table
 import chardet
-import imghdr
+from PIL import Image
 
 from command import configure
 
@@ -116,7 +116,11 @@ def _is_image(file_path):
     Check if a file is an image.
     Returns True if the file is an image, False otherwise.
     """
-    return imghdr.what(file_path) is not None
+    try:
+        Image.open(file_path)
+        return True
+    except (IOError, OSError):
+        return False
 
 def count_tokens(file_path):
     if _is_image(file_path):

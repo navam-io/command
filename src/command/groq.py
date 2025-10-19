@@ -10,6 +10,7 @@ import groq
 
 import command.configure as configure
 from command.provider import Provider
+from command import env_loader  # Load .env.local automatically
 
 
 class Groq(Provider):

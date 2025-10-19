@@ -2,6 +2,11 @@
 # command-vault/
 .DS_Store
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

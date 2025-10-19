@@ -11,6 +11,7 @@ from typing import Any, Dict, Generator, List
 from openai import OpenAI
 
 from command.provider import Provider
+from command import env_loader  # Load .env.local automatically
 
 class Openai(Provider):
     def __init__(self):

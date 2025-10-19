@@ -2,7 +2,7 @@
 
 Use Command to supercharge your productivity and workflow with personal, fast, and quality AI. Turn your Terminal into a configurable, interactive, and unobtrusive personal AI app. **Power of 15+ LLMs and 7 providers at your finger tips.** Pair with workflows in Markdown, VS Code, Obsidian, and GitHub. Get productive fast with three simple commands.
 
-[![Watch Command in Action](https://raw.githubusercontent.com/command/command/main/images/command-youtube.png)](https://www.youtube.com/watch?v=rnKpeChON3g)
+[![Watch Command in Action](https://raw.githubusercontent.com/navam-io/command/main/images/command-youtube.png)](https://www.youtube.com/watch?v=rnKpeChON3g)
 
 ## Why Command?
 
@@ -19,11 +19,11 @@ Use Command to supercharge your productivity and workflow with personal, fast, a
 - **Local**: Llama 3.1, Mistral NeMo, Gemma 2, Qwen 2 via Ollama
 - **Groq, Perplexity, Bedrock** and more
 
-![Seamless Workflow Integration](https://raw.githubusercontent.com/command/command/main/images/Seamles%20Workflow.png)
+![Seamless Workflow Integration](https://raw.githubusercontent.com/navam-io/command/main/images/Seamles%20Workflow.png)
 
 **Intent-Driven Workflow:** Command transforms your intents—tasks, goals, questions—into actionable results. Save your intents as simple markdown outlines, recall them when needed, run models on them, and save results based on your workflow.
 
-![Actionable Intents](https://raw.githubusercontent.com/command/command/main/images/Actionable%20Intents.png)
+![Actionable Intents](https://raw.githubusercontent.com/navam-io/command/main/images/Actionable%20Intents.png)
 
 **Markdown Workflows:** Command works seamlessly with markdown content, integrating perfectly with VS Code, Obsidian, and other markdown tools. Design custom workflows that enhance your craft without leaving your favorite environment.
 
@@ -167,7 +167,7 @@ Now you are ready to install Command.
 
 Transform partial ideas into polished content with Command's powerful `refer` workflow. Write partial blog posts, seed ideas, intent lists, or incomplete notes—then use Command to expand them into complete, well-researched content.
 
-![Personal AI Analysis](https://raw.githubusercontent.com/command/command/main/images/Analyze%20Personal%20AI.png)
+![Personal AI Analysis](https://raw.githubusercontent.com/navam-io/command/main/images/Analyze%20Personal%20AI.png)
 
 The `refer` command works with custom `refer-section` configs in `command.yml` to transform partial content into complete posts, notes, articles, or research papers. Experiment with models, tune settings by document type, define custom folders, and specify document-specific system prompts.
 
@@ -227,13 +227,13 @@ refer notes-to-summarize "lecture-05-quantum-physics"
 
 When combined with other Command commands this workflow can get even more powerful. As an example, start by defining your document template for a set of intents and prompts as a simple markdown. For example `Financial Analysis` or `Product Management` are shown here. Next add a few intents as headings like, `Macro Factors Impact Stocks` or `Top Companies by ROCE` and so on. Then add simple prompts under these intents to generate content. You can now use Command to expand on the set of intents and prompts in your document template with the command `refer intents-to-expand "Financial Analysis"` and the model will brainstorm more related intents and prompts for you to use.
 
-![](https://raw.githubusercontent.com/command/assets/main/images/obsidian-command.png)
+![Obsidian Integration](https://raw.githubusercontent.com/navam-io/command/main/images/obsidian-command.png)
 
 Now run `cmnd intents "Financial Analysis"` and choose among a list of intents to generate as content embeds. The response is saved under `Embeds` folder automatically and the embed is linked in your document template instantly. Rinse, repeat.
 
 This workflow can get really useful very fast. As each template has linked embeds, Obsidian Graph view can be used to visualize the links. You can get creative and link related templates or even enhance generated embeds with more intents. Of course this also means you can use all the great Obsidian plugins to generate websites, PDFs, and more.  Your creativity + Obsidian + Command = Magic!
 
-![](https://raw.githubusercontent.com/command/command/main/images/command-intents-workflow.webp)
+![Intent Workflow Diagram](https://raw.githubusercontent.com/navam-io/command/main/images/command-intents-workflow.webp)
 
 
 ## Test and Evaluate Models and Providers
@@ -253,7 +253,7 @@ cmnd test ask      # Test text generation across all models
 cmnd test vision   # Test vision-capable models
 ```
 
-![Test Summary Results](https://raw.githubusercontent.com/command/command/main/images/test-summary.webp)
+![Test Summary Results](https://raw.githubusercontent.com/navam-io/command/main/images/test-summary.webp)
 
 ### Vision Model Testing Example
 
@@ -276,7 +276,7 @@ cmnd trends           # View trends for last 7 days (default)
 cmnd trends --days 30 # View trends for last 30 days
 ```
 
-![Performance Trends Visualization](https://raw.githubusercontent.com/command/command/main/images/trends.webp)
+![Performance Trends Visualization](https://raw.githubusercontent.com/navam-io/command/main/images/trends.webp)
 
 **What You'll See:**
 - **Sparkline visualizations** showing performance trends over time
@@ -314,9 +314,9 @@ cmnd config ask model haiku4-5
 ask "Explain quantum entanglement"
 ```
 
-![Compare Models Side by Side - Example 1](https://raw.githubusercontent.com/command/assets/main/images/compare-models-1.png)
+![Compare Models Side by Side - Example 1](https://raw.githubusercontent.com/navam-io/command/main/images/compare-models-1.png)
 
-![Compare Models Side by Side - Example 2](https://raw.githubusercontent.com/command/assets/main/images/compare-models-2.png)
+![Compare Models Side by Side - Example 2](https://raw.githubusercontent.com/navam-io/command/main/images/compare-models-2.png)
 
 ### Advanced Multi-Model Workflows
 
@@ -451,15 +451,15 @@ validate:
 
 Command saves a trail of commands, prompts, templates, lookup folders, and saved files in `trail.yml` file. You can visualize this anytime using `cmnd audit` command to gain insights of your Command usage over time.
 
-![](https://raw.githubusercontent.com/command/command/main/images/audit-summary.webp)
+![Audit Summary Dashboard](https://raw.githubusercontent.com/navam-io/command/main/images/audit-summary.webp)
 
-![](https://raw.githubusercontent.com/command/command/main/images/audit-prompt-analysis.webp)
+![Audit Prompt Analysis](https://raw.githubusercontent.com/navam-io/command/main/images/audit-prompt-analysis.webp)
 
 ## Intent driven 
 
 Your intents are tasks you want to execute, goals you want to accomplish, plans you want to realize, decisions you want to make, or questions you want to answer. You control your entire Command experience with your intents. You can save your intents as simple outline of tasks in a text file. You can recall them when you need. You can run models on your intents as you feel fit. You can save results based on your intents.
 
-![](https://raw.githubusercontent.com/command/command/main/images/command-intents.webp)
+![Command Intents Visualization](https://raw.githubusercontent.com/navam-io/command/main/images/command-intents.webp)
 
 ## Validate Generations
 

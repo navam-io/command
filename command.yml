@@ -1,7 +1,7 @@
 ask:
   lookup-folder: Raw
   max-tokens: 4000
-  model: sonnet
+  model: sonnet4-5
   provider: claude
   prompts-folder: Prompts
   save: true
@@ -31,7 +31,7 @@ image-models:
 intents:
   lookup-folder: Intents
   max-tokens: 1000
-  model: sonnet
+  model: haiku4-5
   provider: claude
   save: true
   save-folder: Embeds
@@ -118,7 +118,7 @@ provider-model-mapping:
 refer-gather:
   lookup-folder: Gather
   max-tokens: 4000
-  model: sonnet
+  model: sonnet4-5
   provider: claude
   save: true
   save-folder: Posts
@@ -129,7 +129,7 @@ refer-gather:
 refer-inline-prompts-to-run:
   lookup-folder: Posts
   max-tokens: 4000
-  model: sonnet
+  model: haiku4-5
   provider: claude
   save: true
   save-folder: Posts
@@ -144,7 +144,7 @@ refer-inline-prompts-to-run:
 refer-intents-to-expand:
   lookup-folder: Intents
   max-tokens: 4000
-  model: sonnet
+  model: sonnet4-5
   provider: claude
   save: true
   save-folder: Intents
@@ -160,7 +160,7 @@ refer-intents-to-expand:
 refer-iterate-code:
   lookup-folder: Code
   max-tokens: 4000
-  model: sonnet
+  model: sonnet4-5
   provider: claude
   save: true
   save-folder: Code
@@ -173,7 +173,7 @@ refer-iterate-code:
 refer-post-to-update:
   lookup-folder: Posts
   max-tokens: 4000
-  model: sonnet
+  model: opus4-1
   provider: claude
   save: true
   save-folder: Posts
@@ -189,7 +189,7 @@ refer-post-to-update:
 refer-text-to-extract:
   lookup-folder: Raw
   max-tokens: 4000
-  model: sonnet
+  model: haiku4-5
   provider: claude
   save: true
   save-folder: Posts
@@ -201,7 +201,7 @@ run:
   save-folder: ../../Apps
 split:
   context-ratio: 0.8
-  model: sonnet
+  model: haiku4-5
 test:
   ask: How old is the oldest pyramid?
   image-path: Images/hackathon.jpg
@@ -209,8 +209,8 @@ test:
 validate:
   lookup-folder: Intents
   max-tokens: 4000
-  model: gpt4o
-  provider: openai
+  model: opus4-1
+  provider: claude
   save: true
   save-folder: Embeds
   system: Only respond to the prompt. Do not explain your response.
@@ -222,7 +222,7 @@ validate:
 vision:
   lookup-folder: Gather/images
   max-tokens: 300
-  model: sonnet
+  model: sonnet4-5
   provider: claude
   save: true
   save-folder: Vision
@@ -230,11 +230,14 @@ vision:
     Do not explain your response.
   temperature: 0.5
 vision-models:
+- sonnet4-5
 - sonnet
+- opus4-1
+- opus
+- haiku4-5
+- haiku
 - gpt4o
 - gpt4mini
-- opus
-- haiku
 - gemini-pro
 - gemini-flash
 - llava

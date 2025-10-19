@@ -37,8 +37,8 @@ Go to a folder where you want to initialize Command. This could be your Obsidian
 
 ```bash
 pip install -U command # upgrade or install latest Command
-command init # copies config file, quick start samples
-command id # identifies active provider and model
+cmnd init # copies config file, quick start samples
+cmnd id # identifies active provider and model
 ask "How old is the oldest pyramid?" # start prompting the model
 ```
 
@@ -105,8 +105,8 @@ For local, private models, [install Ollama](https://ollama.com/) and download th
 Verify everything works across all configured models:
 
 ```bash
-command test ask      # Test text generation models
-command test vision   # Test vision-capable models
+cmnd test ask      # Test text generation models
+cmnd test vision   # Test vision-capable models
 ```
 
 ### Python Environment Setup (optional)
@@ -141,26 +141,26 @@ Now you are ready to install Command.
 
 ## Command Reference
 
-*Note that `command`, `ask`, `image` and `refer` are four top level commands available to you when you install Command.
+*Note that `cmnd`, `ask`, `image` and `refer` are four top level commands available to you when you install Command.
 
 | Command      | Example and Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ***ask**     | `ask "your prompt"`<br>Prompt the LLM for a fast, crisp (default up to 300 words), single turn response<br><br>`ask`<br>Browses the configured prompts folder, lists prompt templates for user to run.                                                                                                                                                                                                                                                                                                                   |
-| **audit**    | `command audit`<br>Analyze your own usage of Command over time with an insightful command line dashboard and markdown report.                                                                                                                                                                                                                                                                                                                                                                                            |
-| **config**   | `command config ask save true`<br>Edit `command.yml` file config from command line                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **gather**   | `command gather "webpage url"`<br>Cleanly scrape an article from a webpage, without the menus, sidebar, footer. Includes images. Saves as markdown formatted similar to the HTML source.<br> <br>Refer the scraped markdown content using `refer gather` command.<br>Use vision on scraped images using `command vision` command.                                                                                                                                                                                        |
+| **audit**    | `cmnd audit`<br>Analyze your own usage of Command over time with an insightful command line dashboard and markdown report.                                                                                                                                                                                                                                                                                                                                                                                            |
+| **config**   | `cmnd config ask save true`<br>Edit `command.yml` file config from command line                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **gather**   | `cmnd gather "webpage url"`<br>Cleanly scrape an article from a webpage, without the menus, sidebar, footer. Includes images. Saves as markdown formatted similar to the HTML source.<br> <br>Refer the scraped markdown content using `refer gather` command.<br>Use vision on scraped images using `cmnd vision` command.                                                                                                                                                                                        |
 | ***refer**   | `refer text-to-extract`<br>Browse a set of raw text files and run custom prompts to extract new structured content.<br><br>`refer inline-prompts-to-run`<br>Run prompts embedded inline within text to expand, change, and convert existing documents.<br><br>`refer intents`<br>Expand a set of intents and prompts within an intents template<br><br>`refer your-command`<br>You can configure your own extensions to refer command by simply copying and changing any of the existing `refer-existing` model configs. |
-| **run**      | `command run`<br>Browse `Code` folder for markdown files with code blocks, create, setup, and run the app in one single command!<br><br>The `Code` folder markdown files with code blocks are created using `ask` command running `Create Vite App.md` prompt template or similar.                                                                                                                                                                                                                                       |
-| **id**       | `command id`<br>Identifies the current provider and model for `ask` command<br><br>`command id section-name`<br>Identifies the provider and model defined in specific section                                                                                                                                                                                                                                                                                                                                            |
+| **run**      | `cmnd run`<br>Browse `Code` folder for markdown files with code blocks, create, setup, and run the app in one single command!<br><br>The `Code` folder markdown files with code blocks are created using `ask` command running `Create Vite App.md` prompt template or similar.                                                                                                                                                                                                                       |
+| **id**       | `cmnd id`<br>Identifies the current provider and model for `ask` command<br><br>`cmnd id section-name`<br>Identifies the provider and model defined in specific section                                                                                                                                                                                                                                                                                                                            |
 | ***image**   | `image`<br>Select a prompt template to generate an image.<br><br>`image "Prompt for image to generate"`<br>Prompt to generate an image.                                                                                                                                                                                                                                                                                                                                                                                  |
-| **init**     | `command init`<br>Initialize command in any folder. Copies `command.yml` default config and quick start Intents and Embeds folders and files. Checks before overwriting. Use --force option to force overwrite files and folders.                                                                                                                                                                                                                                                                                        |
-| **intents**  | `command intents "Financial Analysis"`<br>Interactively choose from a list of intents within a template to refer into content embeds                                                                                                                                                                                                                                                                                                                                                                                     |
-| **merge**    | `command merge "Source File"`<br>Finds `Source File updated` with placeholder tags `[merge here]` or as custom defined in `merge` config, then merges the two files into `Source File merged`. Use along with `refer inline-prompts-to-run` command to reduce number of tokens processed when editing long text for context but updating only a section.                                                                                                                                                                 |
-| **split**    | `command split "Large File"`<br>Use this command to split a large file into chunks within a specified ratio of target model context. You can configure target model and ratio in `split` section of the configuration. Original file remains untouched and new files with same name and `part #` suffix are created.                                                                                                                                                                                                     |
-| **test**     | `command test ask`<br>Tests command command using all providers and models defined in `command.yml` config and provides a test summary.<br><br>`command test vision`<br>Test vision models.                                                                                                                                                                                                                                                                                                                              |
-| **trends**   | `command trends`<br>Visualize latency and token length trends based on `command test` runs for `ask` and `vision` commands across models and providers. You can trend for a period of days using  `--days 7` command option.                                                                                                                                                                                                                                                                                             |
-| **validate** | `command validate "Financial Analysis"`<br>Validates prior generated embeds running another model and reports the percentage difference between validated and original content.                                                                                                                                                                                                                                                                                                                                          |
-| **vision**   | `command vision -p path/to/image.png "Describe this image"`<br>Runs vision models on images from local path (-p), url (-u), or camera (-c) and responds based on prompt.                                                                                                                                                                                                                                                                                                                                                 |
+| **init**     | `cmnd init`<br>Initialize command in any folder. Copies `command.yml` default config and quick start Intents and Embeds folders and files. Checks before overwriting. Use --force option to force overwrite files and folders.                                                                                                                                                                                                                                                                        |
+| **intents**  | `cmnd intents "Financial Analysis"`<br>Interactively choose from a list of intents within a template to refer into content embeds                                                                                                                                                                                                                                                                                                                                                                                     |
+| **merge**    | `cmnd merge "Source File"`<br>Finds `Source File updated` with placeholder tags `[merge here]` or as custom defined in `merge` config, then merges the two files into `Source File merged`. Use along with `refer inline-prompts-to-run` command to reduce number of tokens processed when editing long text for context but updating only a section.                                                                                                                                                                 |
+| **split**    | `cmnd split "Large File"`<br>Use this command to split a large file into chunks within a specified ratio of target model context. You can configure target model and ratio in `split` section of the configuration. Original file remains untouched and new files with same name and `part #` suffix are created.                                                                                                                                                                                                     |
+| **test**     | `cmnd test ask`<br>Tests command command using all providers and models defined in `command.yml` config and provides a test summary.<br><br>`cmnd test vision`<br>Test vision models.                                                                                                                                                                                                                                                                                                              |
+| **trends**   | `cmnd trends`<br>Visualize latency and token length trends based on `cmnd test` runs for `ask` and `vision` commands across models and providers. You can trend for a period of days using  `--days 7` command option.                                                                                                                                                                                                                                                                             |
+| **validate** | `cmnd validate "Financial Analysis"`<br>Validates prior generated embeds running another model and reports the percentage difference between validated and original content.                                                                                                                                                                                                                                                                                                                          |
+| **vision**   | `cmnd vision -p path/to/image.png "Describe this image"`<br>Runs vision models on images from local path (-p), url (-u), or camera (-c) and responds based on prompt.                                                                                                                                                                                                                                                                                                                                                 |
 
 
 ## Command Expands Your Content
@@ -229,7 +229,7 @@ When combined with other Command commands this workflow can get even more powerf
 
 ![](https://raw.githubusercontent.com/command/assets/main/images/obsidian-command.png)
 
-Now run `command intents-to-expand "Financial Analysis"` and choose among a list of intents to generate as content embeds. The response is saved under `Embeds` folder automatically and the embed is linked in your document template instantly. Rinse, repeat.
+Now run `cmnd intents "Financial Analysis"` and choose among a list of intents to generate as content embeds. The response is saved under `Embeds` folder automatically and the embed is linked in your document template instantly. Rinse, repeat.
 
 This workflow can get really useful very fast. As each template has linked embeds, Obsidian Graph view can be used to visualize the links. You can get creative and link related templates or even enhance generated embeds with more intents. Of course this also means you can use all the great Obsidian plugins to generate websites, PDFs, and more.  Your creativity + Obsidian + Command = Magic!
 
@@ -249,8 +249,8 @@ Command makes it effortless to compare **15+ leading models** from 7 providers (
 Configure your test prompts in the `test` section of `command.yml`, then run:
 
 ```bash
-command test ask      # Test text generation across all models
-command test vision   # Test vision-capable models
+cmnd test ask      # Test text generation across all models
+cmnd test vision   # Test vision-capable models
 ```
 
 ![Test Summary Results](https://raw.githubusercontent.com/command/command/main/images/test-summary.webp)
@@ -265,15 +265,15 @@ The default vision test uses an image with 150-160 people standing in a circle a
 
 ### Performance Insights
 
-Run multiple tests to understand model performance patterns. Network latency, server load, and other factors can affect individual runs, but trends emerge over time. Use the `command trends` command (covered below) to visualize performance patterns across days or weeks.
+Run multiple tests to understand model performance patterns. Network latency, server load, and other factors can affect individual runs, but trends emerge over time. Use the `cmnd trends` command (covered below) to visualize performance patterns across days or weeks.
 
 ## Visualize Trends
 
-Every `command test` run saves detailed metrics (latency, token counts) to the `Metrics` folder with timestamps and provider-model tags. Over time, these metrics reveal performance patterns and help you make informed decisions about which models to use.
+Every `cmnd test` run saves detailed metrics (latency, token counts) to the `Metrics` folder with timestamps and provider-model tags. Over time, these metrics reveal performance patterns and help you make informed decisions about which models to use.
 
 ```bash
-command trends           # View trends for last 7 days (default)
-command trends --days 30 # View trends for last 30 days
+cmnd trends           # View trends for last 7 days (default)
+cmnd trends --days 30 # View trends for last 30 days
 ```
 
 ![Performance Trends Visualization](https://raw.githubusercontent.com/command/command/main/images/trends.webp)
@@ -298,19 +298,19 @@ Compare models in real-time by running them in parallel terminal windows. Open m
 
 Terminal 1:
 ```bash
-command config ask model sonnet4-5
+cmnd config ask model sonnet4-5
 ask "Explain quantum entanglement"
 ```
 
 Terminal 2:
 ```bash
-command config ask model opus4-1
+cmnd config ask model opus4-1
 ask "Explain quantum entanglement"
 ```
 
 Terminal 3:
 ```bash
-command config ask model haiku4-5
+cmnd config ask model haiku4-5
 ask "Explain quantum entanglement"
 ```
 
@@ -355,10 +355,10 @@ Switch between any workflow with a simple config change or terminal command. Wor
 Command uses friendly aliases that map to full model names. Switch models instantly:
 
 ```bash
-command config ask model sonnet4-5    # Latest Claude Sonnet
-command config ask model haiku4-5     # Fast, cost-effective
-command config ask model opus4-1      # Deep creative analysis
-command config intents model llama    # Local privacy
+cmnd config ask model sonnet4-5    # Latest Claude Sonnet
+cmnd config ask model haiku4-5     # Fast, cost-effective
+cmnd config ask model opus4-1      # Deep creative analysis
+cmnd config intents model llama    # Local privacy
 ```
 
 **Current Model Mappings:**
@@ -408,8 +408,8 @@ You control your data. Period. Choose models and providers you trust, or run LLM
 
 Switch instantly:
 ```bash
-command config ask model llama      # Switch to local Llama 3.1
-command config ask provider ollama  # Ensure local provider
+cmnd config ask model llama      # Switch to local Llama 3.1
+cmnd config ask provider ollama  # Ensure local provider
 ```
 
 ### Per-Command Privacy Configuration
@@ -444,12 +444,12 @@ validate:
 - All data saved locally in your chosen folders
 - No telemetry, no analytics, no tracking
 - Full control over what gets saved and where
-- Audit trail via `command audit` shows exactly what you've run
+- Audit trail via `cmnd audit` shows exactly what you've run
 
 
 ## Audit Trail
 
-Command saves a trail of commands, prompts, templates, lookup folders, and saved files in `trail.yml` file. You can visualize this anytime using `command audit` command to gain insights of your Command usage over time.
+Command saves a trail of commands, prompts, templates, lookup folders, and saved files in `trail.yml` file. You can visualize this anytime using `cmnd audit` command to gain insights of your Command usage over time.
 
 ![](https://raw.githubusercontent.com/command/command/main/images/audit-summary.webp)
 
@@ -463,4 +463,4 @@ Your intents are tasks you want to execute, goals you want to accomplish, plans 
 
 ## Validate Generations
 
-You can verify content generated by one LLM with validation from another model. Make sure you only run validate command after you have run `refer intents` command to generate the first pass of embeds. Use `command validate "Financial Analysis"` or any intent template that you have created. The workflow for validation is similar to expand intents. Only in this case the validate model config decides which model and provider to use. You can also modify the validation prompt to check for any specific things relevant for your use case. The diff is calculated on original and validated text removing any newlines, white space, or markdown formatting when making the diff comparison using similarity scoring. Use this to automate quality validation of generated content.
+You can verify content generated by one LLM with validation from another model. Make sure you only run validate command after you have run `refer intents` command to generate the first pass of embeds. Use `cmnd validate "Financial Analysis"` or any intent template that you have created. The workflow for validation is similar to expand intents. Only in this case the validate model config decides which model and provider to use. You can also modify the validation prompt to check for any specific things relevant for your use case. The diff is calculated on original and validated text removing any newlines, white space, or markdown formatting when making the diff comparison using similarity scoring. Use this to automate quality validation of generated content.

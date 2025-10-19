@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "command"
-version = "0.1.66"
+version = "0.1.67"
 description = "Use Command to supercharge your productivity and workflow with personal, fast, and quality AI. Turn your Terminal into a configurable, interactive, and unobtrusive personal AI app. Power of 15 LLMs and 7 providers at your finger tips. Pair with workflows in Markdown, VS Code, Obsidian, and GitHub. Get productive fast with three simple commands."
 authors = ["Command <team@command.ai>"]
 license = "Apache-2.0"
@@ -48,7 +48,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-command = "command.cli:cli"
+cmnd = "command.cli:cli"
 ask="command.cli:ask"
 refer="command.cli:refer"
 image="command.cli:image"

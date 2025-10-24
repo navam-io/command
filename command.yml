@@ -2,8 +2,8 @@ ask:
   lookup-folder: Raw
   max-tokens: 4000
   model: sonnet4-5
-  provider: claude
   prompts-folder: Prompts
+  provider: claude
   save: true
   save-folder: Code
   system: Only respond to the prompt using valid markdown syntax. Do not explain your

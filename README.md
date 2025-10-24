@@ -2,8 +2,6 @@
 
 Use Command to supercharge your productivity and workflow with personal, fast, and quality AI. Turn your Terminal into a configurable, interactive, and unobtrusive personal AI app. **Power of 15+ LLMs and 7 providers at your finger tips.** Pair with workflows in Markdown, VS Code, Obsidian, and GitHub. Get productive fast with three simple commands.
 
-[![Watch Command in Action](https://raw.githubusercontent.com/navam-io/command/main/images/command-youtube.png)](https://www.youtube.com/watch?v=rnKpeChON3g)
-
 ## Why Command?
 
 **Command Is All You Need:** A play on the famous "Attention is all you need" paper that introduced Transformers. With Command, a simple terminal command is all you need to harness the power of frontier and local LLMs. No browser tabs, no apps, no context switching—just pure, fast workflow. Try `ask "create a table of planets"` and watch your Terminal come alive with streaming responses, markdown-formatted tables, and syntax-highlighted code blocks!
